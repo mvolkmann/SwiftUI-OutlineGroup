@@ -22,10 +22,14 @@ let data = Node(name: "NHL", children: [
 
 struct ContentView: View {
     var body: some View {
+        //TODO: Why doesn't this indent child nodes?
         OutlineGroup(data, id: \.name, children: \.children) { item in
             Text(item.description)
         }.padding(10)
+        
         /*
+        //TODO: Why does this give the following error?
+        //TODO: Initializer requires that 'Node' conform to 'RandomAccessCollection'
         List(data, children: \.children) { item in
             Text(item.description)
         }.listStyle(InsetListStyle())
